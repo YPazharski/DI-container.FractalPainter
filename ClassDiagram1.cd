@@ -1,0 +1,249 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="FractalPainting.App.ImageSettingsAction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>App\ActionsTask.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.643" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.App.SaveImageAction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>App\ActionsTask.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.663" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.App.PaletteSettingsAction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="7.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>App\ActionsTask.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.582" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.App.MainForm" Collapsed="true">
+    <Position X="11.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAABAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\ActionsTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.AppSettings" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="5.75" Y="1.25" Width="3.25" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>App\AppSettings.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="1.568" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.App.DIContainerTask" Collapsed="true">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAIAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.Services" Collapsed="true">
+    <Position X="13.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAEIAAAAAAAAEIgAIBgAAAAAAAAAAQQBIABAAQgAAAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.DragonFractalAction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAiAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.683" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.App.KochFractalAction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.582" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.App.DragonPainter" Collapsed="true">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAIACAAAAAAAAAAAEIAAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.PictureBoxImageHolder" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAgAAQAAAAAAAABAAAAAAAAgAABA=</HashCode>
+      <FileName>App\PictureBoxImageHolder.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.743" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.App.Program" Collapsed="true">
+    <Position X="13.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>App\Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.SettingsManager" Collapsed="true">
+    <Position X="7.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAgIAAIAAAAAAAAAAABAAAAAAAAAAAAAACAAAAAAA=</HashCode>
+      <FileName>App\SettingsManager.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.Fractals.DragonSettings" Collapsed="true">
+    <Position X="0.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAgAAAAAAAAAAAgAAAIAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>App\Fractals\DragonSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.Fractals.DragonSettingsGenerator" Collapsed="true">
+    <Position X="2.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAEAAAAA=</HashCode>
+      <FileName>App\Fractals\DragonSettingsGenerator.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.Fractals.KochPainter" Collapsed="true">
+    <Position X="11.75" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAIAAAAAAAAAABAAEIAAA=</HashCode>
+      <FileName>App\Fractals\KochPainter.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.app" Collapsed="true">
+    <Position X="10" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.Infrastructure.Common.FileBlobStorage" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Common\FileBlobStorage.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.623" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.Infrastructure.Common.ImageSettings" Collapsed="true">
+    <Position X="5.75" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAABAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Common\ImageSettings.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.Infrastructure.Common.Palette" Collapsed="true">
+    <Position X="11.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAACAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Infrastructure\Common\Palette.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.Infrastructure.Common.SettingsForm" Collapsed="true">
+    <Position X="13.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Common\SettingsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.Infrastructure.Common.SettingsForm&lt;TSettings&gt;" Collapsed="true">
+    <Position X="11.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Common\SettingsForm.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.Infrastructure.Common.XmlObjectSerializer" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="4" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Common\XmlObjectSerializer.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.633" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.Infrastructure.UiActions.EnumExtensions" Collapsed="true">
+    <Position X="13.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAIAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\UiActions\EnumExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.Infrastructure.UiActions.UiActionExtensions" Collapsed="true">
+    <Position X="10" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAAAAAAAAAAAAAAAAAQAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\UiActions\UiActionExtensions.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.Properties.Settings" Collapsed="true">
+    <Position X="10" Y="3" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAIAAAAAABAAAAAAAAAAAAAAA=</HashCode>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.Tests.Container_Should" Collapsed="true">
+    <Position X="10" Y="2.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>BRAAAAAQAAAIABgIAAAAAAAAAEAAQAAAAAABABAEACI=</HashCode>
+      <FileName>Tests\Container_Should.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="FractalPainting.Infrastructure.Common.IBlobStorage" Collapsed="true">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAABABAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Common\IBlobStorage.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FractalPainting.Infrastructure.Common.IImageDirectoryProvider" Collapsed="true">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Common\IImageDirectoryProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FractalPainting.Infrastructure.Common.IImageHolder" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAgAAAAgAAQAAAAAAAABAAAAAAAAAAABA=</HashCode>
+      <FileName>Infrastructure\Common\IImageHolder.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FractalPainting.Infrastructure.Common.IImageSettingsProvider" Collapsed="true">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAACAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Common\IImageSettingsProvider.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FractalPainting.Infrastructure.Common.IObjectSerializer" Collapsed="true">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAACBAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Infrastructure\Common\IObjectSerializer.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Interface Name="FractalPainting.Infrastructure.UiActions.IUiAction" Collapsed="true">
+    <Position X="0.5" Y="2" Width="8.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <FileName>Infrastructure\UiActions\IUiAction.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="FractalPainting.Infrastructure.UiActions.MenuCategory" Collapsed="true">
+    <Position X="10" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAAgAAAEAAAAAA=</HashCode>
+      <FileName>Infrastructure\UiActions\MenuCategory.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
