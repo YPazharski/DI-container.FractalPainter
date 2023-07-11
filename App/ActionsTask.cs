@@ -32,12 +32,12 @@ namespace FractalPainting.App
         public MenuCategory Category => MenuCategory.File;
         public string Name => "Сохранить...";
         public string Description => "Сохранить изображение в файл";
-        private readonly string imagesDerictory;
         private readonly IImageHolder imageHolder;
-        public SaveImageAction(string imagesDerictory, IImageHolder imageHolder)
+        private readonly AppSettings appSettings;
+        public SaveImageAction(IImageHolder imageHolder, AppSettings appSettings)
         {
-            this.imagesDerictory = imagesDerictory;
             this.imageHolder = imageHolder;
+            this.appSettings = appSettings;
         }
 
         public void Perform()
@@ -45,7 +45,7 @@ namespace FractalPainting.App
             var dialog = new SaveFileDialog
             {
                 CheckFileExists = false,
-                InitialDirectory = Path.GetFullPath(imagesDerictory),
+                InitialDirectory = Path.GetFullPath(appSettings.ImagesDirectory),
                 DefaultExt = "bmp",
                 FileName = "image.bmp",
                 Filter = "Изображения (*.bmp)|*.bmp"
@@ -79,7 +79,7 @@ namespace FractalPainting.App
             : this(
                 new IUiAction[]
                 {
-                    new SaveImageAction(Services.GetAppSettings().ImagesDirectory, Services.GetImageHolder()),
+                    new SaveImageAction(Services.GetImageHolder(), Services.GetAppSettings()),
                     new DragonFractalAction(),
                     new KochFractalAction(),
                     new ImageSettingsAction(Services.GetImageSettings(), Services.GetImageHolder()),
