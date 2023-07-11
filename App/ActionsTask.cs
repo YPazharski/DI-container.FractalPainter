@@ -11,15 +11,14 @@ namespace FractalPainting.App
     {
         private readonly ImageSettings imageSettings;
         private readonly IImageHolder imageHolder;
-        public ImageSettingsAction(ImageSettings imageSettings, IImageHolder imageHolder) 
+        public MenuCategory Category => MenuCategory.Settings;
+        public string Name => "Изображение...";
+        public string Description => "Размеры изображения";
+        public ImageSettingsAction(ImageSettings imageSettings, IImageHolder imageHolder)
         {
             this.imageSettings = imageSettings;
             this.imageHolder = imageHolder;
         }
-
-        public MenuCategory Category => MenuCategory.Settings;
-        public string Name => "Изображение...";
-        public string Description => "Размеры изображения";
 
         public void Perform()
         {
@@ -34,7 +33,7 @@ namespace FractalPainting.App
         public string Name => "Сохранить...";
         public string Description => "Сохранить изображение в файл";
         private string imagesDerictory;
-        private IImageHolder imageHolder;
+        private readonly IImageHolder imageHolder;
         public SaveImageAction(string imagesDerictory, IImageHolder imageHolder)
         {
             this.imagesDerictory = imagesDerictory;
