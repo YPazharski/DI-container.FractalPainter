@@ -32,7 +32,7 @@ namespace FractalPainting.App
         public MenuCategory Category => MenuCategory.File;
         public string Name => "Сохранить...";
         public string Description => "Сохранить изображение в файл";
-        private string imagesDerictory;
+        private readonly string imagesDerictory;
         private readonly IImageHolder imageHolder;
         public SaveImageAction(string imagesDerictory, IImageHolder imageHolder)
         {
@@ -61,10 +61,15 @@ namespace FractalPainting.App
         public MenuCategory Category => MenuCategory.Settings;
         public string Name => "Палитра...";
         public string Description => "Цвета для рисования фракталов";
+        private readonly Palette palette;
+        public PaletteSettingsAction(Palette palette)
+        {
+            this.palette = palette;
+        }
 
         public void Perform()
         {
-            SettingsForm.For(Services.GetPalette()).ShowDialog();
+            SettingsForm.For(palette).ShowDialog();
         }
     }
 
@@ -78,7 +83,7 @@ namespace FractalPainting.App
                     new DragonFractalAction(),
                     new KochFractalAction(),
                     new ImageSettingsAction(Services.GetImageSettings(), Services.GetImageHolder()),
-                    new PaletteSettingsAction()
+                    new PaletteSettingsAction(Services.GetPalette())
                 }, Services.GetPictureBoxImageHolder())
         { }
 
