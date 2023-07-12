@@ -3,7 +3,7 @@
   <Class Name="FractalPainting.App.ImageSettingsAction" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="4" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAgAAAAAAAgQAAAAAAAAAAAAAAAEACAA=</HashCode>
       <FileName>App\ActionsTask.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.643" Collapsed="true" />
@@ -11,7 +11,7 @@
   <Class Name="FractalPainting.App.SaveImageAction" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="5.75" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAABAAAEACAA=</HashCode>
       <FileName>App\ActionsTask.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.663" Collapsed="true" />
@@ -19,7 +19,7 @@
   <Class Name="FractalPainting.App.PaletteSettingsAction" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="7.5" Y="2.75" Width="1.5" />
     <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
+      <HashCode>AAAAAAAAAAAgAgAAIAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
       <FileName>App\ActionsTask.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="0.582" Collapsed="true" />
@@ -38,43 +38,6 @@
       <FileName>App\AppSettings.cs</FileName>
     </TypeIdentifier>
     <Lollipop Position="1.568" Collapsed="true" />
-  </Class>
-  <Class Name="FractalPainting.App.DIContainerTask" Collapsed="true">
-    <Position X="13.5" Y="3.5" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAIAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
-      <FileName>App\DIContainerTask.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="FractalPainting.App.Services" Collapsed="true">
-    <Position X="13.5" Y="2" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAEIAAAAAAAAEIgAIBgAAAAAAAAAAQQBIABAAQgAAAA=</HashCode>
-      <FileName>App\DIContainerTask.cs</FileName>
-    </TypeIdentifier>
-  </Class>
-  <Class Name="FractalPainting.App.DragonFractalAction" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="2.25" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAiAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>App\DIContainerTask.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.683" Collapsed="true" />
-  </Class>
-  <Class Name="FractalPainting.App.KochFractalAction" Collapsed="true" BaseTypeListCollapsed="true">
-    <Position X="0.5" Y="2.75" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAgAgAAAAAAAAQAAAAAAAAAAAAAAAAACAA=</HashCode>
-      <FileName>App\DIContainerTask.cs</FileName>
-    </TypeIdentifier>
-    <Lollipop Position="0.582" Collapsed="true" />
-  </Class>
-  <Class Name="FractalPainting.App.DragonPainter" Collapsed="true">
-    <Position X="4" Y="4" Width="1.5" />
-    <TypeIdentifier>
-      <HashCode>AAAAAAAAAAAAAAAAAIAAAAAAIACAAAAAAAAAAAEIAAA=</HashCode>
-      <FileName>App\DIContainerTask.cs</FileName>
-    </TypeIdentifier>
   </Class>
   <Class Name="FractalPainting.App.PictureBoxImageHolder" Collapsed="true" BaseTypeListCollapsed="true">
     <Position X="2.25" Y="1.25" Width="1.5" />
@@ -194,6 +157,43 @@
     <TypeIdentifier>
       <HashCode>BRAAAAAQAAAIABgIAAAAAAAAAEAAQAAAAAABABAEACI=</HashCode>
       <FileName>Tests\Container_Should.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.DIContainerTask" Collapsed="true">
+    <Position X="13.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.Services" Collapsed="true">
+    <Position X="13.5" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="FractalPainting.App.DragonFractalAction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="2.25" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.683" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.App.KochFractalAction" Collapsed="true" BaseTypeListCollapsed="true">
+    <Position X="0.5" Y="2.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
+    </TypeIdentifier>
+    <Lollipop Position="0.582" Collapsed="true" />
+  </Class>
+  <Class Name="FractalPainting.App.DragonPainter" Collapsed="true">
+    <Position X="4" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>App\DIContainerTask.cs</FileName>
     </TypeIdentifier>
   </Class>
   <Interface Name="FractalPainting.Infrastructure.Common.IBlobStorage" Collapsed="true">
