@@ -75,17 +75,17 @@ namespace FractalPainting.App
 
     public class MainForm : Form
     {
-        public MainForm()
-            : this(
-                new IUiAction[]
-                {
-                    new SaveImageAction(Services.GetImageHolder(), Services.GetAppSettings()),
-                    new DragonFractalAction(),
-                    new KochFractalAction(),
-                    new ImageSettingsAction(Services.GetImageSettings(), Services.GetImageHolder()),
-                    new PaletteSettingsAction(Services.GetPalette())
-                }, Services.GetPictureBoxImageHolder())
-        { }
+        //public MainForm()
+        //    : this(
+        //        new IUiAction[]
+        //        {
+        //            new SaveImageAction(Services.GetImageHolder(), Services.GetAppSettings()),
+        //            new DragonFractalAction(),
+        //            new KochFractalAction(),
+        //            new ImageSettingsAction(Services.GetImageSettings(), Services.GetImageHolder()),
+        //            new PaletteSettingsAction(Services.GetPalette())
+        //        }, Services.GetPictureBoxImageHolder())
+        //{ }
 
         public MainForm(IUiAction[] actions, PictureBoxImageHolder pictureBox)
         {

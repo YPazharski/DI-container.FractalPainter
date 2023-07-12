@@ -16,7 +16,7 @@ namespace FractalPainting.App
         public static MainForm CreateMainForm()
         {
             // Example: ConfigureContainer()...
-            return new MainForm();
+            return ConfigureContainer().Get<MainForm>();  
         }
 
         public static StandardKernel ConfigureContainer()
@@ -25,6 +25,25 @@ namespace FractalPainting.App
 
             // Example
             // container.Bind<TService>().To<TImplementation>();
+
+            container.Bind<MainForm>().ToSelf();
+
+            container.Bind<IUiAction>().To<ImageSettingsAction>();
+            container.Bind<IUiAction>().To<SaveImageAction>();
+            container.Bind<IUiAction>().To<PaletteSettingsAction>();
+            container.Bind<IUiAction>().To<KochFractalAction>();
+            container.Bind<IUiAction>().To<DragonFractalAction>();
+            
+            container.Bind<IImageHolder>().To<PictureBoxImageHolder>();
+            container.Bind<IBlobStorage>().To<FileBlobStorage>();
+            container.Bind<IObjectSerializer>().To<XmlObjectSerializer>();
+            container.Bind<IImageDirectoryProvider>().To<AppSettings>();
+            container.Bind<IImageSettingsProvider>().To<AppSettings>();
+
+            container.Bind<SettingsManager>().ToConstant(Services.GetSettingsManager());
+            container.Bind<PictureBoxImageHolder>().ToConstant(Services.GetPictureBoxImageHolder());
+            container.Bind<Palette>().ToConstant(Services.GetPalette());
+            container.Bind<AppSettings>().ToConstant(Services.GetAppSettings());
 
             return container;
         }
