@@ -26,15 +26,16 @@ namespace FractalPainting.App
             // Example
             // container.Bind<TService>().To<TImplementation>();
 
-            container.Bind<MainForm>().ToSelf();
+            //container.Bind<MainForm>().ToSelf();
 
             container.Bind<IUiAction>().To<ImageSettingsAction>();
             container.Bind<IUiAction>().To<SaveImageAction>();
             container.Bind<IUiAction>().To<PaletteSettingsAction>();
             container.Bind<IUiAction>().To<KochFractalAction>();
             container.Bind<IUiAction>().To<DragonFractalAction>();
-            
-            container.Bind<IImageHolder>().To<PictureBoxImageHolder>();
+
+            //container.Bind<IImageHolder>().To<PictureBoxImageHolder>();
+            container.Bind<IImageHolder>().ToConstant(Services.GetPictureBoxImageHolder());
             container.Bind<IBlobStorage>().To<FileBlobStorage>();
             container.Bind<IObjectSerializer>().To<XmlObjectSerializer>();
             container.Bind<IImageDirectoryProvider>().To<AppSettings>();
@@ -141,11 +142,16 @@ namespace FractalPainting.App
         public MenuCategory Category => MenuCategory.Fractals;
         public string Name => "Кривая Коха";
         public string Description => "Кривая Коха";
+        private readonly Lazy<KochPainter> painter;
+        public KochFractalAction(Lazy<KochPainter> painter)
+        {
+            this.painter = painter;
+        }
 
         public void Perform()
         {
-            var painter = new KochPainter(Services.GetImageHolder(), Services.GetPalette());
-            painter.Paint();
+            //var painter = new KochPainter(Services.GetImageHolder(), Services.GetPalette());
+            painter.Value.Paint();
         }
     }
 
