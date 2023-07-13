@@ -27,13 +27,16 @@ namespace FractalPainting.App
             container.Bind<IUiAction>().To<PaletteSettingsAction>();
             container.Bind<IUiAction>().To<KochFractalAction>();
             container.Bind<IUiAction>().To<DragonFractalAction>();
-            container.Bind<IImageHolder, PictureBoxImageHolder>().To<PictureBoxImageHolder>().InSingletonScope();
+            container.Bind<IImageHolder, PictureBoxImageHolder>()
+                .To<PictureBoxImageHolder>().InSingletonScope();
             container.Bind<IBlobStorage>().To<FileBlobStorage>();
             container.Bind<IObjectSerializer>().To<XmlObjectSerializer>();
             container.Bind<IImageDirectoryProvider, IImageSettingsProvider>().To<AppSettings>();
             container.Bind<Palette>().ToSelf().InSingletonScope();
-            container.Bind<AppSettings>().ToMethod(context => context.Kernel.Get<SettingsManager>().Load()).InSingletonScope();
-            container.Bind<ImageSettings>().ToMethod(context => context.Kernel.Get<AppSettings>().ImageSettings).InSingletonScope();
+            container.Bind<AppSettings>()
+                .ToMethod(context => context.Kernel.Get<SettingsManager>().Load()).InSingletonScope();
+            container.Bind<ImageSettings>()
+                .ToMethod(context => context.Kernel.Get<AppSettings>().ImageSettings).InSingletonScope();
             container.Bind<IDragonPainterFactory>().ToFactory();
             return container;
         }
@@ -85,16 +88,12 @@ namespace FractalPainting.App
     {
         private readonly IImageHolder imageHolder;
         private readonly DragonSettings settings;
-        //private readonly float size;
-        //private Size imageSize;
         private readonly Palette palette;
 
         public DragonPainter(IImageHolder imageHolder, DragonSettings settings, Palette palette)
         {
             this.imageHolder = imageHolder;
             this.settings = settings;
-            //imageSize = imageHolder.GetImageSize();
-            //size = Math.Min(imageSize.Width, imageSize.Height) / 2.1f;
             this.palette = palette;
         }
 
