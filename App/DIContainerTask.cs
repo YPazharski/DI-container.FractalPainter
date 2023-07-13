@@ -119,8 +119,8 @@ namespace FractalPainting.App
         //{
         //    this.dragonPainterFactory = dragonPainterFactory;
         //}
-        private readonly Func<DragonPainter> dragonPainterCreator; 
-        public DragonFractalAction(Func<DragonPainter> dragonPainterCreator)
+        private readonly Func<DragonSettings, DragonPainter> dragonPainterCreator; 
+        public DragonFractalAction(Func<DragonSettings, DragonPainter> dragonPainterCreator)
         {
             this.dragonPainterCreator = dragonPainterCreator;
         }
@@ -130,7 +130,7 @@ namespace FractalPainting.App
             var dragonSettings = CreateRandomSettings();
             SettingsForm.For(dragonSettings).ShowDialog();
             //var painter = dragonPainterFactory.CreateDragonPainter(dragonSettings);
-            var painter = dragonPainterCreator();
+            var painter = dragonPainterCreator(dragonSettings);
             painter.Paint();
         }
 
