@@ -38,6 +38,8 @@ namespace FractalPainting.App
             container.Bind<Palette>().ToSelf().InSingletonScope();
             container.Bind<AppSettings>().ToConstant(Services.GetAppSettings());
 
+            container.Bind<IDragonPainterFactory>().ToFactory();
+
             return container;
         }
     }
@@ -112,10 +114,15 @@ namespace FractalPainting.App
         public MenuCategory Category => MenuCategory.Fractals;
         public string Name => "Дракон";
         public string Description => "Дракон Хартера-Хейтуэя";
-        private readonly IImageHolder imageHolder;
-        public DragonFractalAction(IImageHolder imageHolder)
+        //private readonly IImageHolder imageHolder;
+        //public DragonFractalAction(IImageHolder imageHolder)
+        //{
+        //    this.imageHolder = imageHolder;
+        //}
+        private readonly IDragonPainterFactory dragonPainterFactory;
+        public DragonFractalAction(IDragonPainterFactory dragonPainterFactory)
         {
-            this.imageHolder = imageHolder;
+            this.dragonPainterFactory = dragonPainterFactory;
         }
 
         public void Perform()
@@ -124,7 +131,8 @@ namespace FractalPainting.App
             // редактируем настройки:
             SettingsForm.For(dragonSettings).ShowDialog();
             // создаём painter с такими настройками
-            var painter = new DragonPainter(imageHolder, dragonSettings);
+            //var painter = new DragonPainter(imageHolder, dragonSettings);
+            var painter = dragonPainterFactory.CreateDragonPainter(dragonSettings);
             painter.Paint();
         }
 
@@ -147,7 +155,6 @@ namespace FractalPainting.App
 
         public void Perform()
         {
-            //var painter = new KochPainter(Services.GetImageHolder(), Services.GetPalette());
             painter.Value.Paint();
         }
     }
@@ -193,5 +200,10 @@ namespace FractalPainting.App
             }
             imageHolder.UpdateUi();
         }
+    }
+
+    public interface IDragonPainterFactory
+    {
+        DragonPainter CreateDragonPainter(DragonSettings settings);
     }
 }
