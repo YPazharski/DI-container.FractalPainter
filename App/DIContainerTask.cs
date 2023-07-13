@@ -114,25 +114,23 @@ namespace FractalPainting.App
         public MenuCategory Category => MenuCategory.Fractals;
         public string Name => "Дракон";
         public string Description => "Дракон Хартера-Хейтуэя";
-        //private readonly IImageHolder imageHolder;
-        //public DragonFractalAction(IImageHolder imageHolder)
+        //private readonly IDragonPainterFactory dragonPainterFactory;
+        //public DragonFractalAction(IDragonPainterFactory dragonPainterFactory)
         //{
-        //    this.imageHolder = imageHolder;
+        //    this.dragonPainterFactory = dragonPainterFactory;
         //}
-        private readonly IDragonPainterFactory dragonPainterFactory;
-        public DragonFractalAction(IDragonPainterFactory dragonPainterFactory)
+        private readonly Func<DragonPainter> dragonPainterCreator; 
+        public DragonFractalAction(Func<DragonPainter> dragonPainterCreator)
         {
-            this.dragonPainterFactory = dragonPainterFactory;
+            this.dragonPainterCreator = dragonPainterCreator;
         }
 
         public void Perform()
         {
             var dragonSettings = CreateRandomSettings();
-            // редактируем настройки:
             SettingsForm.For(dragonSettings).ShowDialog();
-            // создаём painter с такими настройками
-            //var painter = new DragonPainter(imageHolder, dragonSettings);
-            var painter = dragonPainterFactory.CreateDragonPainter(dragonSettings);
+            //var painter = dragonPainterFactory.CreateDragonPainter(dragonSettings);
+            var painter = dragonPainterCreator();
             painter.Paint();
         }
 
