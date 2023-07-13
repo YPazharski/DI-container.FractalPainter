@@ -28,15 +28,14 @@ namespace FractalPainting.App
             container.Bind<IUiAction>().To<KochFractalAction>();
             container.Bind<IUiAction>().To<DragonFractalAction>();
 
-            container.Bind<IImageHolder>().ToConstant(Services.GetPictureBoxImageHolder());
+            container.Bind<IImageHolder, PictureBoxImageHolder>().To<PictureBoxImageHolder>().InSingletonScope();
             container.Bind<IBlobStorage>().To<FileBlobStorage>();
             container.Bind<IObjectSerializer>().To<XmlObjectSerializer>();
             container.Bind<IImageDirectoryProvider>().To<AppSettings>();
             container.Bind<IImageSettingsProvider>().To<AppSettings>();
 
             container.Bind<SettingsManager>().ToConstant(Services.GetSettingsManager());
-            container.Bind<PictureBoxImageHolder>().ToConstant(Services.GetPictureBoxImageHolder());
-            container.Bind<Palette>().ToConstant(Services.GetPalette());
+            container.Bind<Palette>().ToSelf().InSingletonScope();
             container.Bind<AppSettings>().ToConstant(Services.GetAppSettings());
 
             return container;
