@@ -15,7 +15,6 @@ namespace FractalPainting.App
     {
         public static MainForm CreateMainForm()
         {
-            // Example: ConfigureContainer()...
             return ConfigureContainer().Get<MainForm>();  
         }
 
@@ -23,18 +22,12 @@ namespace FractalPainting.App
         {
             var container = new StandardKernel();
 
-            // Example
-            // container.Bind<TService>().To<TImplementation>();
-
-            //container.Bind<MainForm>().ToSelf();
-
             container.Bind<IUiAction>().To<ImageSettingsAction>();
             container.Bind<IUiAction>().To<SaveImageAction>();
             container.Bind<IUiAction>().To<PaletteSettingsAction>();
             container.Bind<IUiAction>().To<KochFractalAction>();
             container.Bind<IUiAction>().To<DragonFractalAction>();
 
-            //container.Bind<IImageHolder>().To<PictureBoxImageHolder>();
             container.Bind<IImageHolder>().ToConstant(Services.GetPictureBoxImageHolder());
             container.Bind<IBlobStorage>().To<FileBlobStorage>();
             container.Bind<IObjectSerializer>().To<XmlObjectSerializer>();
@@ -120,6 +113,11 @@ namespace FractalPainting.App
         public MenuCategory Category => MenuCategory.Fractals;
         public string Name => "Дракон";
         public string Description => "Дракон Хартера-Хейтуэя";
+        private readonly IImageHolder imageHolder;
+        public DragonFractalAction(IImageHolder imageHolder)
+        {
+            this.imageHolder = imageHolder;
+        }
 
         public void Perform()
         {
@@ -127,7 +125,7 @@ namespace FractalPainting.App
             // редактируем настройки:
             SettingsForm.For(dragonSettings).ShowDialog();
             // создаём painter с такими настройками
-            var painter = new DragonPainter(Services.GetImageHolder(), dragonSettings);
+            var painter = new DragonPainter(imageHolder, dragonSettings);
             painter.Paint();
         }
 
