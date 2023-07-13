@@ -27,84 +27,15 @@ namespace FractalPainting.App
             container.Bind<IUiAction>().To<PaletteSettingsAction>();
             container.Bind<IUiAction>().To<KochFractalAction>();
             container.Bind<IUiAction>().To<DragonFractalAction>();
-
             container.Bind<IImageHolder, PictureBoxImageHolder>().To<PictureBoxImageHolder>().InSingletonScope();
             container.Bind<IBlobStorage>().To<FileBlobStorage>();
             container.Bind<IObjectSerializer>().To<XmlObjectSerializer>();
             container.Bind<IImageDirectoryProvider, IImageSettingsProvider>().To<AppSettings>();
-
-            container.Bind<SettingsManager>().ToConstant(Services.GetSettingsManager());
             container.Bind<Palette>().ToSelf().InSingletonScope();
-            container.Bind<AppSettings>().ToConstant(Services.GetAppSettings());
-
+            container.Bind<AppSettings>().ToMethod(context => context.Kernel.Get<SettingsManager>().Load()).InSingletonScope();
+            container.Bind<ImageSettings>().ToMethod(context => context.Kernel.Get<AppSettings>().ImageSettings).InSingletonScope();
             container.Bind<IDragonPainterFactory>().ToFactory();
-
             return container;
-        }
-    }
-
-    public static class Services
-    {
-        private static readonly SettingsManager settingsManager;
-        private static readonly PictureBoxImageHolder pictureBoxImageHolder;
-        private static readonly Palette palette;
-        private static readonly AppSettings appSettings;
-        private static readonly IImageSettingsProvider imageSettingsProvider;
-        private static readonly IImageDirectoryProvider imageDirectoryProvider;
-
-        static Services()
-        {
-            palette = new Palette();
-            pictureBoxImageHolder = new PictureBoxImageHolder();
-            settingsManager = new SettingsManager(new XmlObjectSerializer(), new FileBlobStorage());
-            appSettings = settingsManager.Load();
-            imageSettingsProvider = appSettings;
-            imageDirectoryProvider = appSettings;
-        }
-
-        public static IObjectSerializer CreateObjectSerializer()
-        {
-            return new XmlObjectSerializer();
-        }
-
-        public static IBlobStorage CreateIBlobStorage()
-        {
-            return new FileBlobStorage();
-        }
-
-        public static SettingsManager GetSettingsManager()
-        {
-            return settingsManager;
-        }
-
-        public static PictureBoxImageHolder GetPictureBoxImageHolder()
-        {
-            return pictureBoxImageHolder;
-        }
-
-        public static IImageHolder GetImageHolder()
-        {
-            return pictureBoxImageHolder;
-        }
-
-        public static Palette GetPalette()
-        {
-            return palette;
-        }
-
-        public static ImageSettings GetImageSettings()
-        {
-            return appSettings.ImageSettings;
-        }
-
-        public static IImageSettingsProvider GetImageSettingsProvider()
-        {
-            return imageSettingsProvider;
-        }
-
-        public static AppSettings GetAppSettings()
-        {
-            return appSettings;
         }
     }
 
@@ -113,11 +44,6 @@ namespace FractalPainting.App
         public MenuCategory Category => MenuCategory.Fractals;
         public string Name => "Дракон";
         public string Description => "Дракон Хартера-Хейтуэя";
-        //private readonly IDragonPainterFactory dragonPainterFactory;
-        //public DragonFractalAction(IDragonPainterFactory dragonPainterFactory)
-        //{
-        //    this.dragonPainterFactory = dragonPainterFactory;
-        //}
         private readonly Func<DragonSettings, DragonPainter> dragonPainterCreator; 
         public DragonFractalAction(Func<DragonSettings, DragonPainter> dragonPainterCreator)
         {
@@ -128,7 +54,6 @@ namespace FractalPainting.App
         {
             var dragonSettings = CreateRandomSettings();
             SettingsForm.For(dragonSettings).ShowDialog();
-            //var painter = dragonPainterFactory.CreateDragonPainter(dragonSettings);
             var painter = dragonPainterCreator(dragonSettings);
             painter.Paint();
         }
@@ -160,21 +85,23 @@ namespace FractalPainting.App
     {
         private readonly IImageHolder imageHolder;
         private readonly DragonSettings settings;
-        private readonly float size;
-        private Size imageSize;
+        //private readonly float size;
+        //private Size imageSize;
         private readonly Palette palette;
 
         public DragonPainter(IImageHolder imageHolder, DragonSettings settings, Palette palette)
         {
             this.imageHolder = imageHolder;
             this.settings = settings;
-            imageSize = imageHolder.GetImageSize();
-            size = Math.Min(imageSize.Width, imageSize.Height) / 2.1f;
+            //imageSize = imageHolder.GetImageSize();
+            //size = Math.Min(imageSize.Width, imageSize.Height) / 2.1f;
             this.palette = palette;
         }
 
         public void Paint()
         {
+            var imageSize = imageHolder.GetImageSize();
+            var size = Math.Min(imageSize.Width, imageSize.Height) / 2.1f;
             using (var backgroundBrush = new SolidBrush(palette.BackgroundColor))
             using (var pensBrush = new SolidBrush(palette.PrimaryColor))
             using (var graphics = imageHolder.StartDrawing())
